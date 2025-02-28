@@ -1,0 +1,24 @@
+2025-02-28T19:41:34.428+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] com.example.demo.EmployeePayrollApp      : Starting EmployeePayrollApp using Java 21.0.6 with PID 18824 (D:\STS Projects\EmployeePayrollApp\target\classes started by HP in D:\STS Projects\EmployeePayrollApp)
+2025-02-28T19:41:34.429+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] com.example.demo.EmployeePayrollApp      : No active profile set, falling back to 1 default profile: "default"
+2025-02-28T19:41:34.568+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-28T19:41:34.570+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2025-02-28T19:41:34.645+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-28T19:41:34.646+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-28T19:41:34.647+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-02-28T19:41:34.665+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-28T19:41:34.665+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 235 ms
+2025-02-28T19:41:34.695+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-28T19:41:34.697+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-28T19:41:34.704+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-28T19:41:34.705+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2025-02-28T19:41:34.718+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1119691d
+2025-02-28T19:41:34.718+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2025-02-28T19:41:34.719+05:30  WARN 18824 --- [EmployeePayrollApp] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-28T19:41:34.719+05:30  WARN 18824 --- [EmployeePayrollApp] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-28T19:41:34.737+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-28T19:41:34.737+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-28T19:41:34.756+05:30  WARN 18824 --- [EmployeePayrollApp] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-28T19:41:34.870+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-28T19:41:34.881+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-28T19:41:34.884+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] com.example.demo.EmployeePayrollApp      : Started EmployeePayrollApp in 0.498 seconds (process running for 350.077)
+2025-02-28T19:41:34.886+05:30  INFO 18824 --- [EmployeePayrollApp] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
