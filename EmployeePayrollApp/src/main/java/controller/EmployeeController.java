@@ -1,37 +1,48 @@
 package controller;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+
+import dto.EmployeeDTO;
+import service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import java.util.*;
-import model.Employee;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/employees")
-class EmployeeController {
-    private List<Employee> employees = new ArrayList<>();
+public class EmployeeController {
 
+    @Autowired
+    private EmployeeService employeeService;
+
+    // GET all employees
     @GetMapping
-    public List<Employee> getAllEmployees() {
-        return employees;
+    public List<EmployeeDTO> getAllEmployees() {
+        return employeeService.getAllEmployees();
     }
 
+    // GET employee by ID
+    @GetMapping("/{id}")
+    public EmployeeDTO getEmployeeById(@PathVariable Long id) {
+        return employeeService.getEmployeeById(id);
+    }
+
+    // POST - Add new employee
     @PostMapping
-    public Employee addEmployee(@RequestBody Employee employee) {
-        employees.add(employee);
-        return employee;
+    public EmployeeDTO createEmployee(@RequestBody EmployeeDTO employeeDTO) {
+        return employeeService.createEmployee(employeeDTO);
     }
 
+    // PUT - Update employee
     @PutMapping("/{id}")
-    public Employee updateEmployee(@PathVariable int id, @RequestBody Employee employee) {
-        employees.set(id, employee);
-        return employee;
+    public EmployeeDTO updateEmployee(@PathVariable Long id, @RequestBody EmployeeDTO employeeDTO) {
+        return employeeService.updateEmployee(id, employeeDTO);
     }
 
+    // DELETE - Remove employee
     @DeleteMapping("/{id}")
-    public String deleteEmployee(@PathVariable int id) {
-        employees.remove(id);
-        return "Employee deleted";
+    public void deleteEmployee(@PathVariable Long id) {
+        employeeService.deleteEmployee(id);
     }
 }
-
