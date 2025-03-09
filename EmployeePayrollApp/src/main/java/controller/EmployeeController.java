@@ -1,37 +1,51 @@
 package controller;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.*;
-import java.util.*;
+
+
+import dto.EmployeeDTO;
 import model.Employee;
+import service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
-@RequestMapping("/employees")
-class EmployeeController {
-    private List<Employee> employees = new ArrayList<>();
+@RequestMapping("/api/employees")
+public class EmployeeController {
+	  private final EmployeeService employeeService;
 
-    @GetMapping
-    public List<Employee> getAllEmployees() {
-        return employees;
-    }
+	    public EmployeeController(EmployeeService employeeService) {
+	        this.employeeService = employeeService;
+	    }
 
-    @PostMapping
-    public Employee addEmployee(@RequestBody Employee employee) {
-        employees.add(employee);
-        return employee;
-    }
+	    @GetMapping
+	    public List<Employee> getAllEmployees() {
+	        return employeeService.getAllEmployees();
+	    }
 
-    @PutMapping("/{id}")
-    public Employee updateEmployee(@PathVariable int id, @RequestBody Employee employee) {
-        employees.set(id, employee);
-        return employee;
-    }
+	    @GetMapping("/{id}")
+	    public Employee getEmployeeById(@PathVariable Long id) {
+	        return employeeService.getEmployeeById(id);
+	    }
 
-    @DeleteMapping("/{id}")
-    public String deleteEmployee(@PathVariable int id) {
-        employees.remove(id);
-        return "Employee deleted";
-    }
+	    @PostMapping
+	    public Employee createEmployee(@RequestBody EmployeeDTO employeeDTO) {
+	        return employeeService.createEmployee(employeeDTO);
+	    }
+
+	    @PutMapping("/{id}")
+	    public Employee updateEmployee(@PathVariable Long id, @RequestBody EmployeeDTO employeeDTO) {
+	        return employeeService.updateEmployee(id, employeeDTO);
+	    }
+
+	    @DeleteMapping("/{id}")
+	    public boolean deleteEmployee(@PathVariable Long id) {
+	        return employeeService.deleteEmployee(id);
+	    }
+	    
+	    @GetMapping("/department/sales")
+	    public List<Employee> getEmployeesByDepartment() {
+	        return employeeService.getEmployeesByDepartment();
+	    }
 }
-
