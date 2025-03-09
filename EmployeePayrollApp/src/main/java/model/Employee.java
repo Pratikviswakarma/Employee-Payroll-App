@@ -1,12 +1,29 @@
 package model;
 
-public class Employee {
-    private String name;
-    private double salary;
 
-    // Getters and Setters
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-    public double getSalary() { return salary; }
-    public void setSalary(double salary) { this.salary = salary; }
+import java.time.LocalDate;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "employees")
+@Data
+public class Employee {
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Long id;
+
+	    private String name;
+
+	    private String gender;
+
+	    private LocalDate startDate;
+
+	    private String note;
+
+	    private String profilePic;
+
+	    private String department;
+
+	    private Double salary;
 }
